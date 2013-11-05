@@ -1,0 +1,10 @@
+HWND WsWin1 = FindWindow(0, "UPS WorldShip - oT2z?u¡±@¡Â¡M");
+    HWND WsWin2 = FindWindow(0, "UPS WorldShip - oT2z-u  [?¡P£g{|s¡Lu3Q¡MT¢DI]");
+    HWND Click1 = FindWindow(NULL,"C:\\UPS\\WSAutoClick.exe");
+    HWND Click2 = FindWindow(NULL,"D:\\UPS\\WSAutoClick.exe");
+    HWND WsWin3 = FindWindow(0, "3q¢XTa?oA"); 
+    HWND WsSave1 = FindWindow(NULL, "|sAE¢XU1B");
+    HWND WsWin4 = FindWindow(0, "UPS WorldShip");
+
+UPS WorldShip - oT2z?u¡±@¡Â¡M
+UPS WorldShip - oT2z?u¡±@¡Â¡M
