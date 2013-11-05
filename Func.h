@@ -13,7 +13,7 @@ class Func
              void sec10();
              void sec30();
              void sec60();
-             //void upsWSstart();
+             
              void GenerateKey(int vk, BOOL bExtended);
              void mySleep(clock_t sec);
       };
