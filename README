@@ -2,3 +2,47 @@ Welcome to the WSAutoclick wiki!
 
 This program for UPS WorldShip used
 1. you need install ASIAPAC-Taiwan , UPS WorldShip
+
+WorldShip AutoClick for End of Day
+Support Version : WS14 , WS15 , WS16 , WS17
+1.      If WorldShip not open , open WorldShip
+2.      Wait 30 sec for WorldShip start process
+3.      Send key “F11” for End of Day
+4.      Send key “Enter” for Confirm “YES”
+5.      Wait 30 sec for End of Day process
+6.      Send key “F12” for Close WorldShip
+7.      Wait 1 sec for wait confirm “Yes”
+8.      Send key “Enter” for confirm “Yes”
+      V1
+Start WorldShip has BUG ,
+system("start C:\\UPS\\WSTD\\WorldShipTD.exe");  if program in here
+system("start D:\\UPS\\WSTD\\WorldShipTD.exe"); here has error message
+system("start D:\\UPSDATA\\UPS\\WSTD\\WorldShipTD.exe"); here has error message
+     
+      v2
+      Google Drive : https://drive.google.com/file/d/0BxfqKA0IGISkazcwS3VuWjFUTGc/edit?usp=sharing
+Dropbox : https://www.dropbox.com/s/f4yzso7ivi4kch6/WSAutoclickV2.exe
+Debug start Worldship
+From :
+system("start C:\\UPS\\WSTD\\WorldShipTD.exe");  if program in here
+system("start D:\\UPS\\WSTD\\WorldShipTD.exe"); here has error message
+system("start D:\\UPSDATA\\UPS\\WSTD\\WorldShipTD.exe"); here has error message
+To :
+system("start WorldShipTD.exe");
+ 
+v2-1
+Google Drive : https://drive.google.com/file/d/0BxfqKA0IGISkeE1BRldyT1BwTjA/edit?usp=sharing
+Dropbox : https://www.dropbox.com/s/5fw9atejr9jny0f/WSAutoclickV2-1.exe
+ 
+Open WorldShip wait 30sec change to 120sec. 
+ 
+ 
+V3-1
+抓取Windows 標題，中文版限定
+UPS WorldShip - 管理工作站 >> WorldShip 
+UPS WorldShip - 管理員  [遠程存取被禁用]>>WorldShip
+存檔託運>>Archive
+版本宣告 : 
+錯誤判斷 :
+Google Drive : https://drive.google.com/file/d/0BxfqKA0IGISkNWRtM3R1emVscTg/edit?usp=sharing
+Dropbox : https://www.dropbox.com/s/mj22du9l8dwjx00/WSAutoclickV3-1.exe
