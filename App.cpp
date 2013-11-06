@@ -1,5 +1,6 @@
 #include "App.h"
 #include "Func.h"
+#define UNICODE
 
 void App::WSstart()
 {
@@ -8,6 +9,10 @@ void App::WSstart()
      HWND WsWin1 = FindWindow(0, "UPS WorldShip - 管理工作站");
      HWND WsWin2 = FindWindow(0, "UPS WorldShip - 管理員  [遠程存取被禁用]");
      HWND WsWin7 = FindWindow(0, "選擇有效收件日期 :");
+     HWND WsWin8 = FindWindow(0,"選擇有效收件日期 :");
+     //HWND WsWin9 = GetShellWindow();
+     HWND WsWin10 = GetForegroundWindow();
+
      while (WsWin1 == NULL && WsWin2 == NULL)
      {
                 system("start WorldShipTD.exe");
@@ -19,7 +24,10 @@ void App::WSstart()
                 WsWin2 = FindWindow(0, "UPS WorldShip - 管理員  [遠程存取被禁用]");
                 for(i=3;i>0;i--)//delay 3 sec
                 {printf(".");Sleep(10);}
-                
+                //WsWin9 = GetShellWindow();
+                WsWin10 = GetForegroundWindow();
+                for(i=3;i>0;i--)//delay 3 sec
+                {printf(".");Sleep(10);}
                 //printf("\n");
      }
      func.mySleep(1);
