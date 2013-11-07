@@ -5,11 +5,11 @@
 #define WSAUTOCLICK_V3_3_PRIVATE_H
 
 /* VERSION DEFINITIONS */
-#define VER_STRING	"3.0.1.234"
+#define VER_STRING	"3.0.1.235"
 #define VER_MAJOR	3
 #define VER_MINOR	0
 #define VER_RELEASE	1
-#define VER_BUILD	234
+#define VER_BUILD	235
 #define COMPANY_NAME	""
 #define FILE_VERSION	"3.3"
 #define FILE_DESCRIPTION	"Developed using the Dev-C++ IDE"
