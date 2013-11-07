@@ -10,4 +10,5 @@ class App
              void startEOD();
              void EODcheck();
              void closeWS();
+             
 };
