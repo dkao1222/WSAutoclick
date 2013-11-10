@@ -5,8 +5,8 @@ CPP  = g++.exe
 CC   = gcc.exe
 WINDRES = windres.exe
 RES  = WSAutoclick_V3.3_private.res
-OBJ  = Func.o main.o Note.o App.o WinTitle.o $(RES)
-LINKOBJ  = Func.o main.o Note.o App.o WinTitle.o $(RES)
+OBJ  = Func.o main.o Note.o App.o $(RES)
+LINKOBJ  = Func.o main.o Note.o App.o $(RES)
 LIBS =  -L"C:/Dev-Cpp/lib"  
 INCS =  -I"C:/Dev-Cpp/include" 
 CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
@@ -37,9 +37,6 @@ Note.o: Note.cpp
 
 App.o: App.cpp
 	$(CPP) -c App.cpp -o App.o $(CXXFLAGS)
-
-WinTitle.o: WinTitle.cpp
-	$(CPP) -c WinTitle.cpp -o WinTitle.o $(CXXFLAGS)
 
 WSAutoclick_V3.3_private.res: WSAutoclick_V3.3_private.rc 
 	$(WINDRES) -i WSAutoclick_V3.3_private.rc --input-format=rc -o WSAutoclick_V3.3_private.res -O coff 

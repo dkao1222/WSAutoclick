@@ -6,9 +6,12 @@
 class App
 {
       public:
+             void startWS();
              void WSstart();
              void startEOD();
              void EODcheck();
              void closeWS();
+             void conUPS();
+             void RcvCheck();
              
 };

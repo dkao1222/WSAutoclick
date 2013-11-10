@@ -36,19 +36,57 @@ int main(int argc, char *argv[])
     HWND WsWin4 = FindWindow(0, "UPS WorldShip");
     HWND WsWin5 = FindWindow(0, "軟體更新");
     HWND WsWin6 = FindWindow(0, "一天結束處理");
-    //HWND WsWin7 = FindWindow(0, GetDesktopWindow());
+    //HWND WSrcv1 = FindWindowExA(0,0,"選擇有效收件日期 :",NULL);
+ 
+    
     
     //SetForegroundWindow(WsWin1);
-    app.WSstart(); //WorldShip Start and Check Connect Window status
-    //func.mySleep(1);
-    app.startEOD(); //WorldShip Start End Of Day , send F11 and Enter
-    func.mySleep(3);
-    app.EODcheck();
-    func.mySleep(3);
-    app.EODcheck();
-    //func.mySleep(1);
-    app.closeWS();
+    if(WsWin1 == NULL && WsWin2 == NULL)
+    {
+     app.startWS();
+     func.sec1();
+     app.WSstart(); //WorldShip Start and Check Connect Window status
     
-    system("PAUSE");
+     app.conUPS();
+     app.RcvCheck();
+     app.startEOD(); //WorldShip Start End Of Day , send F11 and Enter
+     app.conUPS();
+     func.mySleep(3);
+     app.EODcheck();
+     func.mySleep(3);
+     app.EODcheck();
+     func.mySleep(1);
+    
+     app.closeWS();
+     return EXIT_SUCCESS;
+
+    }
+    else
+    {
+        app.WSstart(); //WorldShip Start and Check Connect Window status
+    
+        app.conUPS();
+        app.RcvCheck();
+        app.startEOD(); //WorldShip Start End Of Day , send F11 and Enter
+        app.conUPS();
+        func.mySleep(3);
+        app.EODcheck();
+        func.mySleep(3);
+        app.EODcheck();
+        func.mySleep(1);
+        return EXIT_SUCCESS;
+
+    }
+
+
+    //CreateMutex() ;
+    //HWND hwnd = this.GetSafeHwnd(); 
+    //HWND hWnd_v = FindWindow (NULL,"UPS WorldShip - 管理工作站 - 收件日期 : 週五,08-十一月-2013");
+//    char clsName_v[4096]; //a buffer of  chars
+//
+//    GetClassNameA (hWnd_v, clsName_v, 256); //Specifically using ANSI version of the function  
+//    printf("%d\n",clsName_v);
+
+    //system("PAUSE");
     return EXIT_SUCCESS;
 }

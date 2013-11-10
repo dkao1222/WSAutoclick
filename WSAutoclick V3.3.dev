@@ -1,7 +1,7 @@
 [Project]
 FileName=WSAutoclick V3.3.dev
 Name=WSAutoclick
-UnitCount=9
+UnitCount=7
 Type=1
 Ver=1
 ObjFiles=
@@ -63,7 +63,7 @@ BuildCmd=
 Major=3
 Minor=0
 Release=1
-Build=235
+Build=365
 LanguageID=1028
 CharsetID=1252
 CompanyName=
@@ -109,16 +109,6 @@ BuildCmd=
 
 [Unit7]
 FileName=App.cpp
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit8]
-FileName=WinTitle.h
 CompileCpp=1
 Folder=
 Compile=1
