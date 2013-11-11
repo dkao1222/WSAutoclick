@@ -14,6 +14,6 @@ class App
              void conUPS();
              void RcvCheck();
              void WSarchive();
-             
+             void WsUpdate();
              
 };

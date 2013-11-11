@@ -47,6 +47,8 @@ int main(int argc, char *argv[])
      func.mySleep(1);
      app.conUPS();
      func.mySleep(1);
+     app.WsUpdate();
+     func.mySleep(1);
      app.RcvCheck();
      func.mySleep(1);
      app.WSarchive();
@@ -69,6 +71,8 @@ int main(int argc, char *argv[])
      app.WSstart(); //WorldShip Start and Check Connect Window status
      func.mySleep(1);
      app.conUPS();
+     func.mySleep(1);
+     app.WsUpdate();
      func.mySleep(1);
      app.RcvCheck();
      func.mySleep(1);

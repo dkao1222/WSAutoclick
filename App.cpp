@@ -52,6 +52,8 @@ void App::WSstart()
      HWND WsWin2 = FindWindow(0, "UPS WorldShip - 管理員  [遠程存取被禁用]");
      HWND WsWin12 = FindWindow(NULL, "UPS WorldShip - Admin [ Remote Access Disabled ]");
      HWND Winrcv = FindWindow(0, "選擇有效收件日期："); 
+     HWND Wsupdate2 = FindWindow(0,"ＵＰＳ　ＷｏｒｌｄＳｈｉｐ");
+     HWND Wsupdate4 = FindWindow(0,"UPS WorldShip");
      //HWND WSrcv1 = FindWindowExW(0,0,0,"選擇有效收件日期  :");
      fprintf(log,"%d年/%s月/%d日 - 週%s , UPS WorldShp starting.\n",T->tm_year+1900,month[T->tm_mon+1],T->tm_mday,week[T->tm_wday]);
      while (WsWin1 == NULL && WsWin2 == NULL && Winrcv == NULL)
@@ -70,6 +72,14 @@ void App::WSstart()
                 {printf(".");Sleep(10);}
      }
      fprintf(log,"%d年/%s月/%d日 - 週%s , UPS WorldShip startup  process completed, transfer to connect to UPS.\n",T->tm_year+1900,month[T->tm_mon+1],T->tm_mday,week[T->tm_wday]);
+     Wsupdate2 = FindWindow(0,"ＵＰＳ　ＷｏｒｌｄＳｈｉｐ");
+     Wsupdate4 = FindWindow(0,"UPS WorldShip");
+     if(Wsupdate2!= NULL || Wsupdate4 != NULL)
+     {
+                    func.sec1();
+                    func.GenerateKey(0x0d,TRUE);
+                    
+     }
      fclose(log);
 }
 void App::conUPS()
@@ -106,6 +116,7 @@ void App::conUPS()
                        WsWin3 = FindWindow(0, "通訊狀態");
                        for(i=3;i>0;i--)//delay 3 sec
                        {printf(".");Sleep(10);}
+                       //printf("11");
               }
               fprintf(log,"%d年/%s月/%d日 - 週%s , UPS WorldShip connect work completed.\n",T->tm_year+1900,month[T->tm_mon+1],T->tm_mday,week[T->tm_wday]);
               fclose(log);
@@ -178,6 +189,7 @@ void App::startEOD()
                         WsWin6 = FindWindow(0, "一天結束處理"); 
                         func.GenerateKey(0x0d,TRUE);
                         func.sec1();
+                        //printf("11");
                         
               }
               fclose(log);
@@ -247,6 +259,7 @@ void App::startEOD()
 void App::EODcheck()
 {
      Func func;
+     int n;
      struct tm *T;
      time_t t;
      time(&t);
@@ -270,13 +283,19 @@ void App::EODcheck()
      if(WsWin4 != NULL)
      {
                fprintf(log,"%d年/%s月/%d日 - 週%s , UPS WorldShp connect to UPS\n",T->tm_year+1900,month[T->tm_mon+1],T->tm_mday,week[T->tm_wday]);
-               while(WsWin4 != NULL)
-               {
-                            int i;
-                            WsWin4 = FindWindow(0, "UPS WorldShip");
-                            for(i=3;i>0;i--)//delay 3 sec
-                            {printf(".");Sleep(10);}     
-               }
+               
+                                while(WsWin4 != NULL)
+                                {
+                                             int i;
+                                             WsWin4 = FindWindow(0, "UPS WorldShip");
+                                             for(i=3;i>0;i--)//delay 3 sec
+                                             {printf(".");Sleep(10);} 
+
+//                                             printf("11"); 
+                                               break;   
+                                }
+                                
+               
      }
      fprintf(log,"%d年/%s月/%d日 - 週%s , UPS WorldShp connect completed\n",T->tm_year+1900,month[T->tm_mon+1],T->tm_mday,week[T->tm_wday]);
      func.sec3();
@@ -406,4 +425,50 @@ void App::WSarchive()
      }
                
      
+}
+void App::WsUpdate()
+{
+     Func func;
+     int i;
+     HWND WsWin1 = FindWindow(0, "UPS WorldShip - 管理工作站");
+     HWND WsWin11 = FindWindow(0, "UPS WorldShip - Administrative Workstation");
+     HWND WsWin2 = FindWindow(0, "UPS WorldShip - 管理員  [遠程存取被禁用]");
+     HWND WsWin12 = FindWindow(0, "UPS WorldShip - Admin [ Remote Access Disabled ]");
+     HWND Wsupdate = FindWindow(0,"軟體更新");
+     HWND Wsupdate1 = FindWindow(0,"ＵＰＳ　ＷｏｒｌｄＳｈｉｐ　Ｓｙｓｔｅｍ　Ｕｐｄａｔｅ"); 
+     HWND Wsupdate2 = FindWindow(0,"ＵＰＳ　ＷｏｒｌｄＳｈｉｐ"); 
+     HWND Wsupdate3 = FindWindow(0,"UPS WorldShip System Update");
+     HWND Wsupdate4 = FindWindow(0,"UPS WorldShip");
+     
+     //Wsupdate2 = FindWindow(0,"ＵＰＳ　ＷｏｒｌｄＳｈｉｐ"); 
+     Wsupdate4 = FindWindow(0,"UPS WorldShip");
+     //SetForegroundWindow(Wsupdate2);
+     SetForegroundWindow(Wsupdate4);
+     if( Wsupdate4 != NULL )
+     {
+        func.GenerateKey(0x0d,TRUE);
+        func.sec1();
+        Wsupdate4 = FindWindow(0,"UPS WorldShip");
+        func.GenerateKey(0x0d,TRUE);
+        func.sec1();
+        Wsupdate4 = FindWindow(0,"UPS WorldShip");
+        func.GenerateKey(0x0d,TRUE);
+        func.sec1();
+        Wsupdate4 = FindWindow(0,"UPS WorldShip");
+        
+       
+     }
+    
+     Wsupdate1 = FindWindow(0,"ＵＰＳ　ＷｏｒｌｄＳｈｉｐ　Ｓｙｓｔｅｍ　Ｕｐｄａｔｅ");
+     Wsupdate3 = FindWindow(0,"UPS WorldShip System Update"); 
+     while(Wsupdate1 != NULL || Wsupdate3 != NULL )
+     {
+          Wsupdate1 = FindWindow(0,"ＵＰＳ　ＷｏｒｌｄＳｈｉｐ　Ｓｙｓｔｅｍ　Ｕｐｄａｔｅ");
+          Wsupdate3 = FindWindow(0,"UPS WorldShip System Update");  
+          for(i=3;i>0;i--)//delay 3 sec
+          {printf(".");Sleep(10);}  
+          printf("2");         
+     }
+     func.sec3();
+             
 }
