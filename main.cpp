@@ -22,12 +22,10 @@ int main(int argc, char *argv[])
 
     char *week[8]={"日","一","二","三","四","五","六"};
     char *month[40]={"一","二","三","四","五","六","七","八","九","十","十一","十二"}; 
-    
-
-    //printf("現在時間：%d年 %d月 %d日 %d點 %d分 %d秒 星期%s\n",
-    //T->tm_year+1900,T->tm_mon+1,T->tm_mday,T->tm_hour,T->tm_min,T->tm_sec,week[T->tm_wday]);
-    printf("UPS WorldShip - 管理工作站 - 收件日期 : 週%s,%d-%s月-%d\n",
-    week[T->tm_wday],T->tm_mday,month[T->tm_mon+1],T->tm_year+1900);
+    FILE *log;
+    char str[4096];
+     log = fopen("C:\\WSautolog.txt","a");
+    printf("UPS WorldShip - 管理工作站 - 收件日期 : 週%s,%d-%s月-%d\n",week[T->tm_wday],T->tm_mday,month[T->tm_mon+1],T->tm_year+1900);
     
     HWND WsWin1 = FindWindow(0, "UPS WorldShip - 管理工作站");
     HWND WsWin2 = FindWindow(0, "UPS WorldShip - 管理員  [遠程存取被禁用]");
@@ -44,37 +42,47 @@ int main(int argc, char *argv[])
     if(WsWin1 == NULL && WsWin2 == NULL)
     {
      app.startWS();
-     func.sec1();
+     func.mySleep(1);
      app.WSstart(); //WorldShip Start and Check Connect Window status
-    
+     func.mySleep(1);
      app.conUPS();
+     func.mySleep(1);
      app.RcvCheck();
+     func.mySleep(1);
+     app.WSarchive();
      app.startEOD(); //WorldShip Start End Of Day , send F11 and Enter
+     func.mySleep(1);
      app.conUPS();
-     func.mySleep(3);
-     app.EODcheck();
-     func.mySleep(3);
+     func.mySleep(1);
      app.EODcheck();
      func.mySleep(1);
-    
+     app.EODcheck();
+     func.mySleep(1);
      app.closeWS();
      return EXIT_SUCCESS;
 
     }
-    else
+    else 
     {
-        app.WSstart(); //WorldShip Start and Check Connect Window status
-    
-        app.conUPS();
-        app.RcvCheck();
-        app.startEOD(); //WorldShip Start End Of Day , send F11 and Enter
-        app.conUPS();
-        func.mySleep(3);
-        app.EODcheck();
-        func.mySleep(3);
-        app.EODcheck();
-        func.mySleep(1);
-        return EXIT_SUCCESS;
+     app.startWS();
+     func.mySleep(1);
+     app.WSstart(); //WorldShip Start and Check Connect Window status
+     func.mySleep(1);
+     app.conUPS();
+     func.mySleep(1);
+     app.RcvCheck();
+     func.mySleep(1);
+     app.WSarchive();
+     app.startEOD(); //WorldShip Start End Of Day , send F11 and Enter
+     func.mySleep(1);
+     app.conUPS();
+     func.mySleep(1);
+     app.EODcheck();
+     func.mySleep(1);
+     app.EODcheck();
+     func.mySleep(1);
+     
+     return EXIT_SUCCESS;
 
     }
 

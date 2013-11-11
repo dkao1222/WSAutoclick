@@ -9,4 +9,6 @@ class Note
 {
       public:
       void verInfo();
+      void verLog();
+      
       };
