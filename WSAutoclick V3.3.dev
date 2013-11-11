@@ -61,9 +61,9 @@ BuildCmd=
 
 [VersionInfo]
 Major=3
-Minor=0
-Release=1
-Build=473
+Minor=4
+Release=7
+Build=5
 LanguageID=1028
 CharsetID=1252
 CompanyName=

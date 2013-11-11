@@ -292,7 +292,7 @@ void App::EODcheck()
                                              {printf(".");Sleep(10);} 
 
 //                                             printf("11"); 
-                                               break;   
+                                               //break;   
                                 }
                                 
                
